@@ -4,7 +4,7 @@ body {
     line-height: 1.42857143;
     font-weight: 100;
     color: #fff;
-    background-color: #372940
+    background-image: url("../js/images/geisel.png");
 }
 .navbar-brand {
     float: left;
@@ -16,41 +16,41 @@ body {
 .nav>li>a:focus,
 .nav>li>a:hover {
     text-decoration: none;
-    background-color: #eee
+    background: rgba(94, 84, 100, .5);
 }
 
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
     background-color: #5E5464;
-    border-color: #337ab7
+    border-color: #5E5464
 }
 .nav>li.disabled>a:focus,
 .nav>li.disabled>a:hover {
     color: #777;
     text-decoration: none;
     cursor: not-allowed;
-    background-color: transparent
+    background-color: #5E5464
 }
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 10px 15px
+    padding: 15px 15px
 
 }
 
 .text-primary {
-    color: #337ab7
+    color: #fff
 }
 
 a.text-primary:focus,
 a.text-primary:hover {
-    color: #286090
+    color: #000
 }
 
 p {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 200px;
     float: center;
 }
 
@@ -68,8 +68,8 @@ h2,
 h3 {
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 200px;
 
 }
 .h1 .small,
@@ -126,4 +126,28 @@ a:focus,
 a:hover {
     color: #fff;
     text-decoration: underline
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color: #5e5e5e;
+    background-color: #5E5464;
+}
+
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+    max-height: 340px
+}
+
+hr {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 0;
+    border-top: 1px solid #eee
+}
+.navbar {
+    margin-bottom: 0px;
+    border: 1px solid transparent
 }
