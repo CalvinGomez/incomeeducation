@@ -1,10 +1,11 @@
 body {
     font-family: "Roboto_Thin", Roboto-Thin;
-    font-size: 18px;
+    font-size: 16px; 
+    font-size: 1.5vw;
     line-height: 1.42857143;
     font-weight: 100;
     color: #fff;
-    background-image: url("../js/images/coffee.png");
+    background-image: url("../js/images/coffeeoriginal.jpg");
     background-size: 103% 112%;
     background-repeat: no-repeat;
 }
@@ -12,7 +13,8 @@ body {
     float: left;
     height: 50px;
     padding: 15px 15px;
-    font-size: 24px;
+    /*font-size: 24px;*/
+    font-size: 2vw;
     line-height: 20px
 }
 .nav>li>a:focus,
@@ -152,6 +154,14 @@ hr {
 .navbar {
     margin-bottom: 0px;
     border: 1px solid transparent
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    position: fixed;
 }
 
 @font-face {
