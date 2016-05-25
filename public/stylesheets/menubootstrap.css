@@ -1,11 +1,11 @@
 body {
-    font-family: "Century Gothic", CenturyGothic, sans-serif;
-    font-size: 16px;
+    font-family: "Roboto_Thin", Roboto-Thin;
+    font-size: 18px;
     line-height: 1.42857143;
     font-weight: 100;
     color: #fff;
     background-image: url("../js/images/coffee.png");
-    background-size: 100% 110%;
+    background-size: 103% 112%;
     background-repeat: no-repeat;
 }
 .navbar-brand {
@@ -152,4 +152,19 @@ hr {
 .navbar {
     margin-bottom: 0px;
     border: 1px solid transparent
+}
+
+@font-face {
+    font-family: Geosans_Light;
+    src: url('../fonts/GeosansLight.ttf');
+}
+
+@font-face {
+    font-family: Caviar_Dreams;
+    src: url('../fonts/CaviarDreams.ttf');
+}
+
+@font-face {
+    font-family: Roboto_Thin;
+    src: url('../fonts/Roboto-Thin.ttf');
 }

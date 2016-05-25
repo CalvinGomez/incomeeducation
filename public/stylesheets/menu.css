@@ -24,8 +24,9 @@ footer {
     padding: 15px 0 15px 0;
 }
 
+/*collapsed bar color*/
 .navbar.navbar-fixed-top.fixed-theme {
-    background-color: #3F3348;
+    background-color: #494949;
     border-color: #080808;
     box-shadow: 0 0 5px rgba(0,0,0,.8);
 }
