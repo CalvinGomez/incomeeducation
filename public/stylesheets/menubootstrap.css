@@ -4,7 +4,9 @@ body {
     line-height: 1.42857143;
     font-weight: 100;
     color: #fff;
-    background-image: url("../js/images/geisel.png");
+    background-image: url("../js/images/coffee.png");
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
 }
 .navbar-brand {
     float: left;
