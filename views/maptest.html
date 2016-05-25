@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" type="text/css" href="stylesheets/maptest.css">
+	 <link rel="stylesheet" type="text/css" href="stylesheets/leaflet.css">
+	 <script src="js/leaflet-src.js"></script>
+     <script src="js/leaflet.js"></script>
+</head>
+<body>
+	<div id="mapid"></div>
+	<script>
+		var mymap = L.map('mapid').setView([32.7157, -117.1611], 13);
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'aprathna.078og2ep',
+    accessToken: 'pk.eyJ1IjoiYXByYXRobmEiLCJhIjoiY2lva3R0dTBkMDAzYXU2bTA3bXVjdXpvZSJ9.vnChROM_wM-N55VCqPJRTg'
+}).addTo(mymap);
+
+		var carslbadMarker = L.marker([33.1581, -117.3506]).addTo(mymap);
+		carslbadMarker.bindPopup("Carlsbad").openPopup();
+
+		var laJollaMarker = L.marker([32.8328, -117.2713]).addTo(mymap);		
+		laJollaMarker.bindPopup("La Jolla").openPopup();
+	</script>
+
+</body>
+</html>
