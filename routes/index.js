@@ -14,4 +14,8 @@ router.get('/maptest', function(req, res, next) {
   res.render('maptest');
 });
 
+router.get('/vis', function(req, res, next) {
+  res.render('vis');
+});
+
 module.exports = router;
