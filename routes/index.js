@@ -18,4 +18,8 @@ router.get('/vis', function(req, res, next) {
   res.render('vis');
 });
 
+router.get('/vis2', function(req, res, next) {
+  res.render('vis2');
+});
+
 module.exports = router;
