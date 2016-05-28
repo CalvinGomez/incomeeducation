@@ -14,6 +14,10 @@ router.get('/maptest', function(req, res, next) {
   res.render('maptest');
 });
 
+router.get('/arcgis', function(req, res, next) {
+  res.render('arcgis');
+});
+
 router.get('/vis', function(req, res, next) {
   res.render('vis');
 });
