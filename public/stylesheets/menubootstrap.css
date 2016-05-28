@@ -17,10 +17,14 @@ body {
     font-size: 2vw;
     line-height: 20px
 }
+
+/*the navbar shit*/
 .nav>li>a:focus,
 .nav>li>a:hover {
     text-decoration: none;
-    background: rgba(94, 84, 100, .5);
+    background: transparent; /*rgba(94, 84, 100, .5);*/
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 .nav .open>a,
@@ -36,10 +40,12 @@ body {
     cursor: not-allowed;
     background-color: #5E5464
 }
+
+/*Spacing between nav buttons*/
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 15px 15px
+    padding: 15px 20px
 
 }
 
@@ -133,10 +139,18 @@ a:hover {
     text-decoration: underline
 }
 
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:hover {
-    color: #5e5e5e;
-    background-color: #5E5464;
+@media (min-width:768px) {
+    .navbar-nav {
+        float: right;
+        margin: 0
+    }
+    .navbar-nav>li {
+        float: left
+    }
+    .navbar-nav>li>a {
+        padding-top: 15px;
+        padding-bottom: 15px
+    }
 }
 
 .navbar-fixed-bottom .navbar-collapse,
@@ -158,11 +172,17 @@ hr {
 }
 
 .container {
-    padding-right: 15px;
+    padding-right: 50px;
     padding-left: 50px;
     margin-right: auto;
     margin-left: auto;
     position: fixed;
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1236px
+    }
 }
 
 @font-face {
@@ -178,4 +198,9 @@ hr {
 @font-face {
     font-family: Roboto_Thin;
     src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+    font-family: BacktoBlack;
+    src: url('../fonts/Back_to_black.ttf');
 }

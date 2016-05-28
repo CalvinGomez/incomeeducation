@@ -27,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/menu', routes);
 app.use('/maptest', routes);
+app.use('/vis', routes);
+app.use('/visoverlay', routes);
 app.use('/users', users);
 app.use('/arcgis', routes);
 

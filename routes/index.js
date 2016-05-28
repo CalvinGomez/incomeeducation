@@ -18,4 +18,12 @@ router.get('/arcgis', function(req, res, next) {
   res.render('arcgis');
 });
 
+router.get('/vis', function(req, res, next) {
+  res.render('vis');
+});
+
+router.get('/visoverlay', function(req, res, next) {
+  res.render('visoverlay');
+});
+
 module.exports = router;
