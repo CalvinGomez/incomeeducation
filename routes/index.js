@@ -14,4 +14,8 @@ router.get('/maptest', function(req, res, next) {
   res.render('maptest');
 });
 
+router.get('/arcgis', function(req, res, next) {
+  res.render('arcgis');
+});
+
 module.exports = router;
