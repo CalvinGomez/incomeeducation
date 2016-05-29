@@ -9,10 +9,13 @@ body {
     background-size: 103% 112%;
     background-repeat: no-repeat;
     padding-top: 80px;
-
 }
 
+.landingshit h1{
+    color: black;
+    text-align: center;
 
+}
 
 /*logo specifics*/
 .navbar-brand {
