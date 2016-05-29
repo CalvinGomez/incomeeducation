@@ -25,5 +25,8 @@ router.get('/vis', function(req, res, next) {
 router.get('/visoverlay', function(req, res, next) {
   res.render('visoverlay');
 });
+router.get('/test', function(req, res, next) {
+  res.render('test');
+});
 
 module.exports = router;
