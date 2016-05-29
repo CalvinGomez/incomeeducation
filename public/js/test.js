@@ -36,7 +36,7 @@ var svg = d3.select("body")
 
 
  //= requires("data/income.json")[0];
-
+var dataArray= new Array();
 $.getJSON("data/income.json", function(json) {
     var employmentData    =json[0];
     var less15            = employmentData["Households with income <$15K"];
@@ -48,19 +48,23 @@ $.getJSON("data/income.json", function(json) {
     var from150to200      = employmentData["Households with income $150k-$200k"];
     var more200           = employmentData["Households with income >$200k"];
     dataArray             =[less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
+    // console.log(dataArray);
 
+    svg.selectAll("rect")
+        .data(dataArray)
+        .enter()
+        .append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", 20)
+        .attr("height", 100)
+        .attr("fill", "white");
 
 });
 
+// console.log(dataArray);
 
-svg.selectAll("rect")
-    .data(dataArray)
-    .enter()
-    .append("rect")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", 20)
-    .attr("height", 100);
+
 
 
 
