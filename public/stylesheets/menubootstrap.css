@@ -8,17 +8,27 @@ body {
     background-image: url("../js/images/coffeeoriginal.jpg");
     background-size: 103% 112%;
     background-repeat: no-repeat;
+    padding-top: 80px;
 }
+
+.landingshit h1{
+    color: black;
+    text-align: center;
+
+}
+
+/*logo specifics*/
 .navbar-brand {
     float: left;
     height: 50px;
     padding: 15px 15px;
     /*font-size: 24px;*/
-    font-size: 2vw;
-    line-height: 20px
+    font-size: 3vw;
+    line-height: 20px;
+    font-family: 'BacktoBlack', Back_to_black;
 }
 
-/*the navbar shit*/
+/*the color of the squares in the navbar items*/
 .nav>li>a:focus,
 .nav>li>a:hover {
     text-decoration: none;
@@ -27,12 +37,6 @@ body {
     border-radius: 5px;
 }
 
-.nav .open>a,
-.nav .open>a:focus,
-.nav .open>a:hover {
-    background-color: #5E5464;
-    border-color: #5E5464
-}
 .nav>li.disabled>a:focus,
 .nav>li.disabled>a:hover {
     color: #777;
@@ -57,6 +61,7 @@ a.text-primary:focus,
 a.text-primary:hover {
     color: #000
 }
+
 
 p {
     margin-left: 50px;
@@ -133,12 +138,14 @@ a {
     text-decoration: none
 }
 
+/*hover over the navbars color*/
 a:focus,
 a:hover {
     color: #fff;
     text-decoration: underline
 }
 
+/*positions navbar elements on right side*/
 @media (min-width:768px) {
     .navbar-nav {
         float: right;
@@ -152,6 +159,12 @@ a:hover {
         padding-bottom: 15px
     }
 }
+
+/*hover oer the logo color*/
+.navbar-brand:focus,
+.navbar-brand:hover {
+    color: #ADAD9C;
+}    
 
 .navbar-fixed-bottom .navbar-collapse,
 .navbar-fixed-top .navbar-collapse {
@@ -179,12 +192,15 @@ hr {
     position: fixed;
 }
 
+/*total width of navbar*/
 @media (min-width:1200px) {
     .container {
         width: 1236px
     }
 }
 
+
+/*---------------FONTS-----------------*/
 @font-face {
     font-family: Geosans_Light;
     src: url('../fonts/GeosansLight.ttf');
