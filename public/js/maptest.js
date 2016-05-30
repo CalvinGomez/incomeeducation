@@ -95,6 +95,9 @@ var mymap = L.map('mapid', { zoomControl: false }).setView([32.9000, -116.8000],
         }
         function altOnClick(e)
         {
-            console.log(e.target.id);
+                console.log(e.target.id);
+                markerOnClickBarChart(e.target.id);
+                markerOnClickPieChart(e.target.id);
+
             // document.getElementById('testText').style = 'position:fixed;z-index:1000;display:inline';
         }

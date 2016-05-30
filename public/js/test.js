@@ -22,158 +22,211 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");*/
+i=0;
+function markerOnClickBarChart(e) {
+    i++;
+    if (i==1) {
 
-
-
-
-var w = 400;
-var h = 300;
-var barPadding = 1;
+        var w = 400;
+        var h = 300;
+        var barPadding = 1;
 //Create SVG element
-var svg = d3.select("#sidebar")
-    .append("svg")
-    .attr("width", w)
-    .attr("height", h);
+        var svg = d3.select("#sidebar")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
 
 
- //= requires("data/income.json")[0];
-var dataArray= new Array();
-var incomeArray= new Array();
-$.getJSON("data/income.json", function(json) {
-    var employmentData    = json[0];
-    var less15            = employmentData["Households with income <$15K"];
-    var from15to35        = employmentData["Households with income $15k-$35k"];
-    var from35to50        = employmentData["Households with income$35k-$50k"];
-    var from50to75        = employmentData["Households with income $50k-$75k"];
-    var from75to100       = employmentData["Households with income $75k-$100k"];
-    var from100to150      = employmentData["Households with income $100k-$150k"];
-    var from150to200      = employmentData["Households with income $150k-$200k"];
-    var more200           = employmentData["Households with income >$200k"];
-    dataArray             = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
-    // console.log(dataArray);
-    incomeArray           =["<$15K","$15k-$35k","$35k-$50k","$50k-$75k","$75k-$100k","$100k-$150k","$150k-$200k",">$200k"];
+        //= requires("data/income.json")[0];
+        var dataArray = new Array();
+        var incomeArray = new Array();
+        $.getJSON("data/income.json", function (json) {
+            var employmentData = json[0];
+            var less15 = employmentData["Households with income <$15K"];
+            var from15to35 = employmentData["Households with income $15k-$35k"];
+            var from35to50 = employmentData["Households with income$35k-$50k"];
+            var from50to75 = employmentData["Households with income $50k-$75k"];
+            var from75to100 = employmentData["Households with income $75k-$100k"];
+            var from100to150 = employmentData["Households with income $100k-$150k"];
+            var from150to200 = employmentData["Households with income $150k-$200k"];
+            var more200 = employmentData["Households with income >$200k"];
+            dataArray = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
+            // console.log(dataArray);
+            incomeArray = ["<$15K", "$15k-$35k", "$35k-$50k", "$50k-$75k", "$75k-$100k", "$100k-$150k", "$150k-$200k", ">$200k"];
 
-    svg.selectAll("rect")
-        .data(dataArray)
-        .enter()
-        .append("rect")
-        .attr("x", 0)
-        .attr("y", function(d) {
-            return h - Math.floor(d/5);  //Height minus data value
-        })
-        .attr("width", 50)
-        .attr("height", function(d, i) {
-            return Math.floor(d/5);
-        })
-        .attr("fill", "black")
-        .attr("x", function(d, i) {
-            return i * 51;  //Bar width of 20 plus 1 for padding
+            svg.selectAll("rect")
+                .data(dataArray)
+                .enter()
+                .append("rect")
+                .attr("x", 0)
+                .attr("y", function (d) {
+                    return h - Math.floor(d / 5);  //Height minus data value
+                })
+                .attr("width", 50)
+                .attr("height", function (d, i) {
+                    return Math.floor(d / 5);
+                })
+                .attr("fill", "black")
+                .attr("x", function (d, i) {
+                    return i * 51;  //Bar width of 20 plus 1 for padding
+                });
+            svg.selectAll("text")
+                .data(dataArray)
+                .enter()
+                .append("text")
+                .text(function (d) {
+                    return d;
+                })
+                .attr("x", function (d, i) {
+                    return i * 51 + 10;  //Bar width of 20 plus 1 for padding
+                })
+                .attr("y", function (d) {
+                    return h - (Math.floor(d / 5) ) + 10;
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "11px")
+                .attr("fill", "white");
+
+
+            /*var margin = {top: 20, right: 30, bottom: 30, left: 40}
+             var width = 960 - margin.left - margin.right;
+             var height = 500 - margin.top - margin.bottom;
+
+             var x = d3.scale.ordinal()
+             .rangeRoundBands([0, width], .1);
+
+
+             var xAxis = d3.svg.axis()
+             .scale(x)
+             .orient("bottom");
+
+             svg.selectAll("rect")
+             .data(incomeArray)
+             .append("g")
+             .attr("class", "x axis")
+             .attr("transform", "translate(0," + height + ")")
+             .call(xAxis);*/
+
+
         });
-    svg.selectAll("text")
-        .data(dataArray)
-        .enter()
-        .append("text")
-        .text(function(d) {
-            return d;
-        })
-        .attr("x", function(d, i) {
-            return i * 51+10;  //Bar width of 20 plus 1 for padding
-        })
-        .attr("y", function(d) {
-            return h - (Math.floor(d/5) )+10;
-        })
-        .attr("font-family", "sans-serif")
-        .attr("font-size", "11px")
-        .attr("fill", "white");
-
-
-
-    /*var margin = {top: 20, right: 30, bottom: 30, left: 40}
-    var width = 960 - margin.left - margin.right;
-    var height = 500 - margin.top - margin.bottom;
-
-    var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1);
-
-
-    var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom");
-
-    svg.selectAll("rect")
-        .data(incomeArray)
-        .append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);*/
-
-
-
-
-
-
-
-});
 
 // console.log(dataArray);
 
 
+        /*d3.json(employmentData, function(error, data){
+         x.domain(data.map(function(d){ return d.letter}));
+         y.domain([0, d3.max(data, function(d){return d.frequency})]);
+
+         var bar = chart.selectAll("g")
+         .data(data)
+         .enter()
+         .append("g")
+         .attr("transform", function(d, i){
+         return "translate("+x(d.letter)+", 0)";
+         });
+
+         bar.append("rect")
+         .attr("y", function(d) {
+         return y(d.frequency);
+         })
+         .attr("x", function(d,i){
+         return x.rangeBand()+(margin.left/2);
+         })
+         .attr("height", function(d) {
+         return height - y(d.frequency);
+         })
+         .attr("width", x.rangeBand());  //set width base on range on ordinal data
+
+         bar.append("text")
+         .attr("x", x.rangeBand()+margin.left )
+         .attr("y", function(d) { return y(d.frequency) -10; })
+         .attr("dy", ".75em")
+         .text(function(d) { return d.frequency; });
+
+         chart.append("g")
+         .attr("class", "x axis")
+         .attr("transform", "translate("+margin.left+","+ height+")")
+         .call(xAxis);
+
+         chart.append("g")
+         .attr("class", "y axis")
+         .attr("transform", "translate("+margin.left+",0)")
+         .call(yAxis)
+         .append("text")
+         .attr("transform", "rotate(-90)")
+         .attr("y", 6)
+         .attr("dy", ".71em")
+         .style("text-anchor", "end")
+         .text("Frequency");
+         });*/
+
+        function type(d) {
+            d.letter = +d.letter; // coerce to number
+            return d;
+        }
+    } else {
+        var svg = d3.select("body").transition();
 
 
+        $.getJSON("data/income.json", function (json) {
+            var updateObject=$.grep(json, function (item) {
+                return item.Area == e;
+            });
+            console.log(e);
+            console.log(updateObject);
+            var less15 = updateObject[0]["Households with income <$15K"];
+            var from15to35 = updateObject[0]["Households with income $15k-$35k"];
+            var from35to50 = updateObject[0]["Households with income$35k-$50k"];
+            var from50to75 = updateObject[0]["Households with income $50k-$75k"];
+            var from75to100 = updateObject[0]["Households with income $75k-$100k"];
+            var from100to150 = updateObject[0]["Households with income $100k-$150k"];
+            var from150to200 = updateObject[0]["Households with income $150k-$200k"];
+            var more200 = updateObject[0]["Households with income >$200k"];
+            var dataArray = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
+            // console.log(dataArray);
+            var incomeArray = ["<$15K", "$15k-$35k", "$35k-$50k", "$50k-$75k", "$75k-$100k", "$100k-$150k", "$150k-$200k", ">$200k"];
+            console.log(dataArray);
+            svg.selectAll("rect")
+                .data(dataArray)
+                .enter()
+                .append("rect")
+                .attr("x", 0)
+                .attr("y", function (d) {
+                    return h - Math.floor(d / 5);  //Height minus data value
+                })
+                .attr("width", 50)
+                .attr("height", function (d, i) {
+                    return Math.floor(d / 5);
+                })
+                .attr("fill", "black")
+                .attr("x", function (d, i) {
+                    return i * 51;
+                });
+            svg.selectAll("text")
+                .data(dataArray)
+                .enter()
+                .append("text")
+                .text(function (d) {
+                    return d;
+                })
+                .attr("x", function (d, i) {
+                    return i * 51 + 10;
+                })
+                .attr("y", function (d) {
+                    return h - (Math.floor(d / 5) ) + 10;
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "11px")
+                .attr("fill", "white");
 
 
-
-
-
-
-/*d3.json(employmentData, function(error, data){
-    x.domain(data.map(function(d){ return d.letter}));
-    y.domain([0, d3.max(data, function(d){return d.frequency})]);
-
-    var bar = chart.selectAll("g")
-        .data(data)
-        .enter()
-        .append("g")
-        .attr("transform", function(d, i){
-            return "translate("+x(d.letter)+", 0)";
         });
 
-    bar.append("rect")
-        .attr("y", function(d) {
-            return y(d.frequency);
-        })
-        .attr("x", function(d,i){
-            return x.rangeBand()+(margin.left/2);
-        })
-        .attr("height", function(d) {
-            return height - y(d.frequency);
-        })
-        .attr("width", x.rangeBand());  //set width base on range on ordinal data
+        // Make the changes
 
-    bar.append("text")
-        .attr("x", x.rangeBand()+margin.left )
-        .attr("y", function(d) { return y(d.frequency) -10; })
-        .attr("dy", ".75em")
-        .text(function(d) { return d.frequency; });
 
-    chart.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate("+margin.left+","+ height+")")
-        .call(xAxis);
 
-    chart.append("g")
-        .attr("class", "y axis")
-        .attr("transform", "translate("+margin.left+",0)")
-        .call(yAxis)
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Frequency");
-});*/
 
-function type(d) {
-    d.letter = +d.letter; // coerce to number
-    return d;
+
+    }
 }
