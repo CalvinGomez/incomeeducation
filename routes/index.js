@@ -26,4 +26,8 @@ router.get('/visoverlay', function(req, res, next) {
   res.render('visoverlay');
 });
 
+router.get('/bubbles', function(req, res, next) {
+  res.render('bubbles');
+});
+
 module.exports = router;
