@@ -20,6 +20,8 @@ $.getJSON("data/income.json", function(incomejson) {
     });
   }
 
+  localStorage.setItem('gameStorage', JSON.stringify(householdIncomeJson));
+
   var diameter = 600;
 
   var svg = d3.select('#graph').append('svg')
