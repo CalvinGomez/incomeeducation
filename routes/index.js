@@ -33,4 +33,8 @@ router.get('/bubbles', function(req, res, next) {
   res.render('bubbles');
 });
 
+router.get('/testBubbles', function(req, res, next) {
+  res.render('testZ');
+});
+
 module.exports = router;

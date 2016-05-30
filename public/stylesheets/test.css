@@ -23,3 +23,11 @@ body{
     color : #eaeaea;
     padding : 10px;
 }
+
+
+svg{
+    position: relative;
+
+
+    float: left;
+}

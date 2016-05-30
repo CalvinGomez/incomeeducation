@@ -26,11 +26,11 @@ var yAxis = d3.svg.axis()
 
 
 
-var w = 5000;
-var h = 1000;
+var w = 400;
+var h = 300;
 var barPadding = 1;
 //Create SVG element
-var svg = d3.select("body")
+var svg = d3.select("#sidebar")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
@@ -59,15 +59,15 @@ $.getJSON("data/income.json", function(json) {
         .append("rect")
         .attr("x", 0)
         .attr("y", function(d) {
-            return h - d;  //Height minus data value
+            return h - Math.floor(d/5);  //Height minus data value
         })
-        .attr("width", 70)
+        .attr("width", 50)
         .attr("height", function(d, i) {
-            return d;
+            return Math.floor(d/5);
         })
         .attr("fill", "black")
         .attr("x", function(d, i) {
-            return i * 71;  //Bar width of 20 plus 1 for padding
+            return i * 51;  //Bar width of 20 plus 1 for padding
         });
     svg.selectAll("text")
         .data(dataArray)
@@ -77,10 +77,10 @@ $.getJSON("data/income.json", function(json) {
             return d;
         })
         .attr("x", function(d, i) {
-            return i * 71+15;  //Bar width of 20 plus 1 for padding
+            return i * 51+10;  //Bar width of 20 plus 1 for padding
         })
         .attr("y", function(d) {
-            return h - (d )+15;
+            return h - (Math.floor(d/5) )+10;
         })
         .attr("font-family", "sans-serif")
         .attr("font-size", "11px")
