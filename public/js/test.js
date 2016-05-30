@@ -26,8 +26,8 @@ var yAxis = d3.svg.axis()
 
 
 
-var w = 500;
-var h = 400;
+var w = 400;
+var h = 300;
 var barPadding = 1;
 //Create SVG element
 var svg = d3.select("#sidebar")
