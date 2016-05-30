@@ -9,6 +9,7 @@ var mymap = L.map('mapid', { zoomControl: false }).setView([32.9000, -116.8000],
 		var carslbadMarker = L.marker([33.1581, -117.3506]).on('click', altOnClick).bindLabel('Carlsbad').addTo(mymap);
 
 		var laJollaMarker = L.marker([32.8328, -117.2713]).on('click', altOnClick).bindLabel('La Jolla').addTo(mymap);
+        laJollaMarker.id = "23456";
 
         var ramonaMarker = L.marker([33.0414, -116.8793]).on('click', altOnClick).bindLabel('Ramona').addTo(mymap);
 
@@ -94,5 +95,6 @@ var mymap = L.map('mapid', { zoomControl: false }).setView([32.9000, -116.8000],
         }
         function altOnClick(e)
         {
-            document.getElementById('testText').style = 'position:fixed;z-index:1000;display:inline';
+            console.log(e.target.id);
+            // document.getElementById('testText').style = 'position:fixed;z-index:1000;display:inline';
         }
