@@ -36,7 +36,10 @@
             </div><!-- /.container -->
         </nav><!-- /.navbar -->
 
-	<div id="mapid"></div>
+	<div id="mapid"></div>     
+    <span id="testText" style="display:none">
+        Test text
+    </span>
 	<script>
 		var mymap = L.map('mapid', { zoomControl: false }).setView([32.7157, -117.1611], 13);
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -46,13 +49,22 @@
     accessToken: 'pk.eyJ1IjoiYXByYXRobmEiLCJhIjoiY2lva3R0dTBkMDAzYXU2bTA3bXVjdXpvZSJ9.vnChROM_wM-N55VCqPJRTg'
 }).addTo(mymap);
 
-		var carslbadMarker = L.marker([33.1581, -117.3506]).addTo(mymap);
+		var carslbadMarker = L.marker([33.1581, -117.3506]).on('click', altOnClick).addTo(mymap);
 		carslbadMarker.bindPopup("Carlsbad").openPopup();
 
-		var laJollaMarker = L.marker([32.8328, -117.2713]).addTo(mymap);		
+		var laJollaMarker = L.marker([32.8328, -117.2713]).on('click', altOnClick).addTo(mymap);		
 		laJollaMarker.bindPopup("La Jolla").openPopup();
 
         new L.Control.Zoom({ position: 'bottomleft' }).addTo(mymap);
+
+        function markerOnClick(e)
+        {
+          alert("hi. you clicked the marker at " + e.latlng);
+        }
+        function altOnClick(e)
+        {
+            document.getElementById('testText').style = 'position:fixed;z-index:1000;display:inline';
+        }
 	</script>
 
 </body>
