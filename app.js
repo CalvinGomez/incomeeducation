@@ -33,6 +33,7 @@ app.use('/users', users);
 app.use('/bubbles', users);
 app.use('/arcgis', routes);
 app.use('/test', routes);
+app.use('/testBubbles', routes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
