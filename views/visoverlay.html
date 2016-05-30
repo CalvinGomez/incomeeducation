@@ -68,162 +68,149 @@ body {
 <!-- Donut -->
 <div id="pieChart"></div>
 <script>
-var pie = new d3pie("pieChart", {
-  "header": {
-    "title": {
-      "text": "Piece of shit",
-      "fontSize": 32,
-      "font": "courier"
-    },
-    "subtitle": {
-      "text": "Fuck me this is confusing",
-      "color": "#999999",
-      "fontSize": 10,
-      "font": "courier"
-    },
-    "titleSubtitlePadding": 6
-  },
-  "footer": {
-    "text": "* This was curious. We're not sure why over several people regard Winnipeg as a Top 15 Fear.",
-    "color": "#999999",
-    "fontSize": 10,
-    "font": "open sans",
-    "location": "bottom-left"
-  },
-  "size": {
-    "canvasWidth": 590,
-    "pieInnerRadius": "50%",
-    "pieOuterRadius": "75%"
-  },
-  "data": {
-    "sortOrder": "label-desc",
-    "content": [
-      {
-        "label": "Spiders",
-        "value": 2,
-        "color": "#333333"
+
+  $.getJSON("data/education.json", function(json) {
+    var first=json[0];
+    var pie = new d3pie("pieChart", {
+      "header": {
+        "title": {
+          "text": "Piece of shit",
+          "fontSize": 32,
+          "font": "courier"
+        },
+        "subtitle": {
+          "text": "Fuck me this is confusing",
+          "color": "#999999",
+          "fontSize": 10,
+          "font": "courier"
+        },
+        "titleSubtitlePadding": 6
       },
-      {
-        "label": "Fuck you though",
-        "value": 10,
-        "color": "#444444"
+      "footer": {
+        "text": "* This was curious. We're not sure why over several people regard Winnipeg as a Top 15 Fear.",
+        "color": "#999999",
+        "fontSize": 10,
+        "font": "open sans",
+        "location": "bottom-left"
       },
-      {
-        "label": "Sharks",
-        "value": 8,
-        "color": "#555555"
+      "size": {
+        "canvasWidth": 590,
+        "pieInnerRadius": "50%",
+        "pieOuterRadius": "75%"
       },
-      {
-        "label": "Alien invasion",
-        "value": 8,
-        "color": "#666666"
+      "data": {
+        "sortOrder": "label-desc",
+        "content": [
+          {
+            "label": "Less than 9th grade",
+            "value": first["Less than 9th grade (age>=25)"],
+            "color": "#333333"
+          },
+          {
+            "label": "9th through 12th grade, no diploma",
+            "value": first["9th through 12th grade, no diploma (age>=25)"],
+            "color": "#444444"
+          },
+          {
+            "label": "High school graduate",
+            "value": first["High school graduate (include equivalency (age>=25))"],
+            "color": "#666666"
+          },
+          {
+            "label": "Some college, no diploma",
+            "value": first["Some college, no diploma (age>=25)"],
+            "color": "#777777"
+          },
+          {
+            "label": "Associate's degree",
+            "value": first["Associate's degree (age>=25)"],
+            "color": "#888888"
+          },
+          {
+            "label": "Bachelor's degree",
+            "value": first["Bachelor's degree (age>=25)"],
+            "color": "#999999"
+          },
+          {
+            "label": "Master's degree",
+            "value": first["Master's degree (age>=25)"],
+            "color": "#cb2121"
+          },
+          {
+            "label": "Grade 5 to grade 8",
+            "value": first["Grade 5 to grade 8 -total enrollment (age>=3)"],
+            "color": "#830909"
+          },
+          {
+            "label": "Grade 9 to grade 12",
+            "value": first["Grade 9 to grade 12 -total enrollment (age>=3)"],
+            "color": "#923e99"
+          },
+          {
+            "label": "College undergraduate ",
+            "value": first["College undergraduate -total enrollment (age>=3)"],
+            "color": "#ae83d5"
+          },
+          {
+            "label": "Graduate or professional school",
+            "value": first["Graduate or professional school -total enrollment (age>=3)"],
+            "color": "#111111"
+          }
+        ]
       },
-      {
-        "label": "Learning Objective-C",
-        "value": 5,
-        "color": "#777777"
+      "labels": {
+        "outer": {
+          "format": "label-percentage1",
+          "pieDistance": 20
+        },
+        "inner": {
+          "format": "none"
+        },
+        "mainLabel": {
+          "fontSize": 11
+        },
+        "percentage": {
+          "color": "#999999",
+          "fontSize": 11,
+          "decimalPlaces": 0
+        },
+        "value": {
+          "color": "#cccc43",
+          "fontSize": 11
+        },
+        "lines": {
+          "enabled": true,
+          "color": "#777777"
+        },
+        "truncation": {
+          "enabled": true
+        }
       },
-      {
-        "label": "Public speaking",
-        "value": 3,
-        "color": "#888888"
+      "tooltips": {
+        "enabled": true,
+        "type": "placeholder",
+        "string": "{label}: {value}, {percentage}%",
+        "styles": {
+          "fadeInSpeed": 255
+        }
       },
-      {
-        "label": "Donald Rumsfeld",
-        "value": 4,
-        "color": "#999999"
+      "effects": {
+        "pullOutSegmentOnClick": {
+          "effect": "linear",
+          "speed": 400,
+          "size": 8
+        }
       },
-      {
-        "label": "The Zombie Apocalypse",
-        "value": 4,
-        "color": "#cb2121"
-      },
-      {
-        "label": "The City of Winnipeg *",
-        "value": 3,
-        "color": "#830909"
-      },
-      {
-        "label": "IE 6",
-        "value": 2,
-        "color": "#923e99"
-      },
-      {
-        "label": "Planes with/out snakes",
-        "value": 5,
-        "color": "#ae83d5"
-      },
-      {
-        "label": "Off-by-one errors",
-        "value": 3,
-        "color": "#111111"
-      },
-      {
-        "label": "Chickadees",
-        "value": 4,
-        "color": "#050505"
-      },
-      {
-        "label": "A never-ending Harper Government",
-        "value": 1,
-        "color": "#646464"
-      },
-      {
-        "label": "Canada",
-        "value": 4,
-        "color": "#747474"
+      "misc": {
+        "colors": {
+          "segmentStroke": "#000000"
+        }
       }
-    ]
-  },
-  "labels": {
-    "outer": {
-      "format": "label-percentage1",
-      "pieDistance": 20
-    },
-    "inner": {
-      "format": "none"
-    },
-    "mainLabel": {
-      "fontSize": 11
-    },
-    "percentage": {
-      "color": "#999999",
-      "fontSize": 11,
-      "decimalPlaces": 0
-    },
-    "value": {
-      "color": "#cccc43",
-      "fontSize": 11
-    },
-    "lines": {
-      "enabled": true,
-      "color": "#777777"
-    },
-    "truncation": {
-      "enabled": true
-    }
-  },
-  "tooltips": {
-    "enabled": true,
-    "type": "placeholder",
-    "string": "{label}: {value}, {percentage}%",
-    "styles": {
-      "fadeInSpeed": 255
-    }
-  },
-  "effects": {
-    "pullOutSegmentOnClick": {
-      "effect": "linear",
-      "speed": 400,
-      "size": 8
-    }
-  },
-  "misc": {
-    "colors": {
-      "segmentStroke": "#000000"
-    }
-  }
-});
+    });
+
+  });
+  console.log(firstObject);
+
 </script>
 <!-- Donut -->
 
@@ -268,7 +255,7 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.tsv("data.tsv", type, function(error, data) {
+/*d3.tsv("data.tsv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.letter; }));
   y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
@@ -298,7 +285,7 @@ d3.tsv("data.tsv", type, function(error, data) {
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
-});
+});*/
 
 function type(d) {
   d.frequency = +d.frequency;

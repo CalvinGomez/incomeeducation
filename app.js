@@ -30,6 +30,7 @@ app.use('/maptest', routes);
 app.use('/vis', routes);
 app.use('/visoverlay', routes);
 app.use('/users', users);
+app.use('/bubbles', users);
 app.use('/arcgis', routes);
 app.use('/test', routes);
 

@@ -197,12 +197,6 @@
 	}
 
 
-/* general typography */
-.leaflet-container {
-	font: 12px/1.5 "Geosans_Light", GeosansLight;
-	}
-
-
 /* general toolbar styles */
 
 .leaflet-bar {
@@ -478,3 +472,11 @@
 	background: #fff;
 	border: 1px solid #666;
 	}
+
+
+/* general typography */
+.leaflet-container {
+	font: 12px/1.5 "Roboto_Thin", Roboto-Thin;
+	}	
+
+

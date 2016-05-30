@@ -29,4 +29,8 @@ router.get('/test', function(req, res, next) {
   res.render('test');
 });
 
+router.get('/bubbles', function(req, res, next) {
+  res.render('bubbles');
+});
+
 module.exports = router;

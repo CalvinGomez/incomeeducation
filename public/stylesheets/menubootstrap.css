@@ -12,9 +12,30 @@ body {
 }
 
 .landingshit h1{
-    color: black;
     text-align: center;
+    font-size: 3vw;
+    margin-left: 125px;
+    margin-right: 125px;
+}
 
+.landingshit h2{
+    font-family: 'BacktoBlack', Back_to_black;
+    font-size: 7vw;
+    text-align: center;
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+.landingshit li{
+    font-family: 'Roboto_Thin', Roboto-Thin;
+    text-align: center;
+    margin: auto;
+    list-style-type: none;
+    text-decoration: none;
+    width: 150px;
+    background: transparent; /*rgba(94, 84, 100, .5);*/
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 /*logo specifics*/

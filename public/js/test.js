@@ -26,8 +26,9 @@ var yAxis = d3.svg.axis()
 
 
 
-var w = 500;
-var h = 100;
+var w = 5000;
+var h = 1000;
+var barPadding = 1;
 //Create SVG element
 var svg = d3.select("body")
     .append("svg")
@@ -37,6 +38,7 @@ var svg = d3.select("body")
 
  //= requires("data/income.json")[0];
 var dataArray= new Array();
+var incomeArray= new Array();
 $.getJSON("data/income.json", function(json) {
     var employmentData    = json[0];
     var less15            = employmentData["Households with income <$15K"];
@@ -49,16 +51,67 @@ $.getJSON("data/income.json", function(json) {
     var more200           = employmentData["Households with income >$200k"];
     dataArray             = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
     // console.log(dataArray);
+    incomeArray           =["<$15K","$15k-$35k","$35k-$50k","$50k-$75k","$75k-$100k","$100k-$150k","$150k-$200k",">$200k"];
 
     svg.selectAll("rect")
         .data(dataArray)
         .enter()
         .append("rect")
         .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", 20)
-        .attr("height", 100)
+        .attr("y", function(d) {
+            return h - d;  //Height minus data value
+        })
+        .attr("width", 70)
+        .attr("height", function(d, i) {
+            return d;
+        })
+        .attr("fill", "black")
+        .attr("x", function(d, i) {
+            return i * 71;  //Bar width of 20 plus 1 for padding
+        });
+    svg.selectAll("text")
+        .data(dataArray)
+        .enter()
+        .append("text")
+        .text(function(d) {
+            return d;
+        })
+        .attr("x", function(d, i) {
+            return i * 71+15;  //Bar width of 20 plus 1 for padding
+        })
+        .attr("y", function(d) {
+            return h - (d )+15;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
         .attr("fill", "white");
+
+
+
+    /*var margin = {top: 20, right: 30, bottom: 30, left: 40}
+    var width = 960 - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
+
+    var x = d3.scale.ordinal()
+        .rangeRoundBands([0, width], .1);
+
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    svg.selectAll("rect")
+        .data(incomeArray)
+        .append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);*/
+
+
+
+
+
+
 
 });
 
