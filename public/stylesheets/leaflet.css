@@ -197,12 +197,6 @@
 	}
 
 
-/* general typography */
-.leaflet-container {
-	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-	}
-
-
 /* general toolbar styles */
 
 .leaflet-bar {
@@ -396,6 +390,7 @@
 .leaflet-popup-content {
 	margin: 13px 19px;
 	line-height: 1.4;
+	color: black;
 	}
 .leaflet-popup-content p {
 	margin: 18px 0;
@@ -477,3 +472,11 @@
 	background: #fff;
 	border: 1px solid #666;
 	}
+
+
+/* general typography */
+.leaflet-container {
+	font: 12px/1.5 "Roboto_Thin", Roboto-Thin;
+	}	
+
+
