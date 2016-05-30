@@ -26,7 +26,7 @@ var mymap = L.map('mapid', { zoomControl: false }).setView([32.9000, -116.8000],
 
         var sweetwaterMarker = L.marker([32.6944, -116.9955]).on('click', altOnClick).bindLabel('Sweetwater').addTo(mymap);
 
-        var universityCityMarker = L.marker([33.8577, -117.2054]).on('click', altOnClick).bindLabel('University City').addTo(mymap);
+        var universityCityMarker = L.marker([32.8577, -117.2054]).on('click', altOnClick).bindLabel('University City').addTo(mymap);
 
         var valleyCenterMarker = L.marker([33.1426, -117.051]).on('click', altOnClick).bindLabel('Valley Center').addTo(mymap);
 
