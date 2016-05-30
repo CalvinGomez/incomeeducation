@@ -5,10 +5,15 @@ body {
     line-height: 1.42857143;
     font-weight: 100;
     color: #fff;
-    background-image: url("../js/images/coffeeoriginal.jpg");
+    /*background-image: url("../js/images/coffeeoriginal.jpg");*/
     background-size: 103% 112%;
     background-repeat: no-repeat;
     padding-top: 80px;
+}
+
+#header-container{
+    background-image: url("../js/images/coffeeoriginal.jpg");
+
 }
 
 /*total width of navbar*/
@@ -175,14 +180,13 @@ a:hover {
 hr {
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 1%;
+    margin-top: 0px;
     margin-bottom: 0px;
     border: 0;
     border-top: 1px solid #eee
 }
 .navbar {
     margin-bottom: 0px;
-    border: 1px solid transparent
 }
 
 .container {
