@@ -6,15 +6,15 @@
     <script type="text/javascript" src="js/menu.js"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/menubootstrap.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/something.css">
 	 <link rel="stylesheet" type="text/css" href="stylesheets/maptest.css">
 	 <link rel="stylesheet" type="text/css" href="stylesheets/leaflet.css">
 	 <script src="js/leaflet-src.js"></script>
      <script src="js/leaflet.js"></script>
 </head>
 <body>
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
 	      <nav id="header" class="navbar navbar-fixed-top">
             <div id="header-container" class="container navbar-container" style="font-family: 'Geosans_Light', Geosans-Light;">
                 <div class="navbar-header">
@@ -31,43 +31,19 @@
                         <li class="active">
                         <!--<a href="#">Home</a>-->
                         </li>
-                        <li><a href="vis">About</a></li>
+                        <li><a href="vis">How It Works</a></li>
                         <li><a href="maptest">Visualization</a></li>
                     </ul>
                 </div><!-- /.nav-collapse -->
             </div><!-- /.container -->
         </nav><!-- /.navbar -->
-
+    <div id="sidebar"></div>    
 	<div id="mapid"></div>     
     <span id="testText" style="display:none">
         Test text
     </span>
-	<script>
-		var mymap = L.map('mapid', { zoomControl: false }).setView([32.7157, -117.1611], 13);
-		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    id: 'aprathna.078og2ep',
-    accessToken: 'pk.eyJ1IjoiYXByYXRobmEiLCJhIjoiY2lva3R0dTBkMDAzYXU2bTA3bXVjdXpvZSJ9.vnChROM_wM-N55VCqPJRTg'
-}).addTo(mymap);
 
-		var carslbadMarker = L.marker([33.1581, -117.3506]).on('click', altOnClick).bindLabel('Carlsbad', { noHide: true }).addTo(mymap);
-		// carslbadMarker.bindPopup("Carlsbad").openPopup();
-
-		// var laJollaMarker = L.marker([32.8328, -117.2713]).on('click', altOnClick).addTo(mymap);		
-		// laJollaMarker.bindPopup("La Jolla").openPopup();
-
-        new L.Control.Zoom({ position: 'bottomleft' }).addTo(mymap);
-
-        function markerOnClick(e)
-        {
-          alert("hi. you clicked the marker at " + e.latlng);
-        }
-        function altOnClick(e)
-        {
-            document.getElementById('testText').style = 'position:fixed;z-index:1000;';
-        }
-	</script>
+	<script src="js/maptest.js"></script>
 
 </body>
 </html>
