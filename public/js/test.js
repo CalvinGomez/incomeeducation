@@ -42,31 +42,12 @@ function markerOnClickBarChart(e) {
         .orient("bottom");
 
 
-    svg = d3.select("#sidebar")
-            .append("svg")
-            .attr("width", w)
-            .attr("height", h+70+20)
-        .append("g")
-        .attr("transform",
-            "translate( 0, 20)");
 
 
 
 
-    var testArray = [{"v":"<$15K"}, {"v":"$15k-$35k"}, {"v":"$35k-$50k"}, {"v":"$50k-$75k"},
-        {"v":"$75k-$100k"}, {"v":"$100k-$150k"}, {"v":"$150k-$200k"}, {"v":">$200k"}];
-    x.domain(testArray.map(function(d) { return d.v; }));
-        svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + h + ")")
-            .call(xAxis)
-         .selectAll("text")
-            .style("text-anchor", "end")
-            .attr("dx", "-.8em")
-            .attr("dy", "-.55em")
-            //.attr("font-size", "11px")
-            //.attr("fill", "red")
-            .attr("transform", "rotate(-90)" );
+
+
 
 
 
@@ -82,6 +63,57 @@ function markerOnClickBarChart(e) {
             var updateObject=$.grep(json, function (item) {
                 return item.Area == e;
             });
+            console.log( updateObject);
+            if (updateObject.length==0){
+
+                svg = d3.select("#sidebar")
+
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h+70+20)
+                    .append("text")
+                    .text(function () {
+                        return "No Data Available";
+                    })
+                    .attr("x", function (d, i) {
+                        return 200;  //Bar width of 20 plus 1 for padding
+                    })
+                    .attr("y", function (d) {
+                        return 200;
+                    })
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", "50px")
+                    .attr("fill", "black");
+                return;
+
+
+
+
+            }
+
+            svg = d3.select("#sidebar")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h+70+20)
+                .append("g")
+                .attr("transform",
+                    "translate( 0, 20)");
+
+
+            var testArray = [{"v":"<$15K"}, {"v":"$15k-$35k"}, {"v":"$35k-$50k"}, {"v":"$50k-$75k"},
+                {"v":"$75k-$100k"}, {"v":"$100k-$150k"}, {"v":"$150k-$200k"}, {"v":">$200k"}];
+            x.domain(testArray.map(function(d) { return d.v; }));
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + h + ")")
+                .call(xAxis)
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", "-.55em")
+                //.attr("font-size", "11px")
+                //.attr("fill", "red")
+                .attr("transform", "rotate(-90)" );
 
 
 
