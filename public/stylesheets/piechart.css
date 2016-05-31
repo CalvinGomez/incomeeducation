@@ -49,3 +49,7 @@ body {
     top: 100%;
     left: 0;
 }
+#pieChart svg {
+    width: 590px;
+    height: 430px;
+}
