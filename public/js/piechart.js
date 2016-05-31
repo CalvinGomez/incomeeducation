@@ -63,22 +63,22 @@ function markerOnClickPieChart(e) {
                     {
                         "label": "Master's degree",
                         "value": first["Master's degree (age>=25)"],
-                        "color": "#cb2121"
+                        "color": "#999999"
                     },
                     {
                         "label": "Grade 5 to grade 8",
                         "value": first["Grade 5 to grade 8 -total enrollment (age>=3)"],
-                        "color": "#830909"
+                        "color": "#666666"
                     },
                     {
                         "label": "Grade 9 to grade 12",
                         "value": first["Grade 9 to grade 12 -total enrollment (age>=3)"],
-                        "color": "#923e99"
+                        "color": "#999999"
                     },
                     {
                         "label": "College undergraduate ",
                         "value": first["College undergraduate -total enrollment (age>=3)"],
-                        "color": "#ae83d5"
+                        "color": "#494949"
                     },
                     {
                         "label": "Graduate or professional school",
