@@ -25,23 +25,35 @@ var yAxis = d3.svg.axis()
 i=0;
 function markerOnClickBarChart(e) {
     i++;
-    if (i==1) {
+    var w = 400;
+    var h = 300;
+    var barPadding = 1;
+    var svg = null;
 
-        var w = 400;
-        var h = 300;
-        var barPadding = 1;
-//Create SVG element
-        var svg = d3.select("#sidebar")
+
+    $("svg").remove();
+    svg = d3.select("#sidebar")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
+
+
+
+//Create SVG element
+
 
 
         //= requires("data/income.json")[0];
         var dataArray = new Array();
         var incomeArray = new Array();
         $.getJSON("data/income.json", function (json) {
-            var employmentData = json[0];
+
+            var updateObject=$.grep(json, function (item) {
+                return item.Area == e;
+            });
+
+
+            var employmentData = updateObject[0];
             var less15 = employmentData["Households with income <$15K"];
             var from15to35 = employmentData["Households with income $15k-$35k"];
             var from35to50 = employmentData["Households with income$35k-$50k"];
@@ -54,17 +66,18 @@ function markerOnClickBarChart(e) {
             // console.log(dataArray);
             incomeArray = ["<$15K", "$15k-$35k", "$35k-$50k", "$50k-$75k", "$75k-$100k", "$100k-$150k", "$150k-$200k", ">$200k"];
 
+            var n=45;
             svg.selectAll("rect")
                 .data(dataArray)
                 .enter()
                 .append("rect")
                 .attr("x", 0)
                 .attr("y", function (d) {
-                    return h - Math.floor(d / 5);  //Height minus data value
+                    return h - Math.floor(d / n);  //Height minus data value
                 })
                 .attr("width", 50)
                 .attr("height", function (d, i) {
-                    return Math.floor(d / 5);
+                    return Math.floor(d /n);
                 })
                 .attr("fill", "black")
                 .attr("x", function (d, i) {
@@ -81,7 +94,7 @@ function markerOnClickBarChart(e) {
                     return i * 51 + 10;  //Bar width of 20 plus 1 for padding
                 })
                 .attr("y", function (d) {
-                    return h - (Math.floor(d / 5) ) + 10;
+                    return h - (Math.floor(d / n) ) + 10;
                 })
                 .attr("font-family", "sans-serif")
                 .attr("font-size", "11px")
@@ -158,20 +171,20 @@ function markerOnClickBarChart(e) {
          .attr("dy", ".71em")
          .style("text-anchor", "end")
          .text("Frequency");
-         });*/
+         });
 
         function type(d) {
             d.letter = +d.letter; // coerce to number
             return d;
-        }
-    } else {
-        var svg = d3.select("body").transition();
+        }*/
 
 
-        $.getJSON("data/income.json", function (json) {
+      /*  $.getJSON("data/income.json", function (json) {
             var updateObject=$.grep(json, function (item) {
                 return item.Area == e;
             });
+            //var w = 400;
+            //var h = 300;
             console.log(e);
             console.log(updateObject);
             var less15 = updateObject[0]["Households with income <$15K"];
@@ -183,44 +196,48 @@ function markerOnClickBarChart(e) {
             var from150to200 = updateObject[0]["Households with income $150k-$200k"];
             var more200 = updateObject[0]["Households with income >$200k"];
             var dataArray = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
-            // console.log(dataArray);
+            console.log(dataArray);
             var incomeArray = ["<$15K", "$15k-$35k", "$35k-$50k", "$50k-$75k", "$75k-$100k", "$100k-$150k", "$150k-$200k", ">$200k"];
             console.log(dataArray);
-            svg.selectAll("rect")
+            var svg1=d3.select("#sidebar")
+                .selectAll("rect")
                 .data(dataArray)
-                .enter()
-                .append("rect")
-                .attr("x", 0)
+                .attr("width", w)
+                .attr("height", h);
+
+            svg1.enter().append("rect");
+
+            svg1.attr("x", 0)
                 .attr("y", function (d) {
-                    return h - Math.floor(d / 5);  //Height minus data value
+                    console.log(Math.floor(d/15));
+                    return h - Math.floor(d / 15);  //Height minus data value
                 })
                 .attr("width", 50)
                 .attr("height", function (d, i) {
-                    return Math.floor(d / 5);
+                    return Math.floor(d / 15);
                 })
                 .attr("fill", "black")
                 .attr("x", function (d, i) {
-                    return i * 51;
+                    return i * 51;  //Bar width of 20 plus 1 for padding
                 });
-            svg.selectAll("text")
-                .data(dataArray)
-                .enter()
-                .append("text")
-                .text(function (d) {
+            svg1.exit().remove();
+            svg1.enter().append("rect");
+            svg1.text(function (d) {
                     return d;
                 })
                 .attr("x", function (d, i) {
                     return i * 51 + 10;
                 })
                 .attr("y", function (d) {
-                    return h - (Math.floor(d / 5) ) + 10;
+                    return h - (Math.floor(d / 15) ) + 10;
                 })
                 .attr("font-family", "sans-serif")
                 .attr("font-size", "11px")
                 .attr("fill", "white");
+            svg1.exit().remove();
 
 
-        });
+        });*/
 
         // Make the changes
 
@@ -228,5 +245,5 @@ function markerOnClickBarChart(e) {
 
 
 
-    }
+
 }

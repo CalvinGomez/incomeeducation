@@ -3,7 +3,10 @@
  */
 function markerOnClickPieChart(e) {
     $.getJSON("data/education.json", function (json) {
-        var first = json[0];
+        var updateObject=$.grep(json, function (item) {
+            return item.Area == e;
+        });
+        var first = updateObject[0];
         var pie = new d3pie("pieChart", {
             "header": {
                 "title": {
