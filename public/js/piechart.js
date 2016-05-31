@@ -10,12 +10,12 @@ function markerOnClickPieChart(e) {
         var pie = new d3pie("pieChart", {
             "header": {
                 "title": {
-                    "text": "Education Leval ",
+                    "text": "Education Level ",
                     "fontSize": 32,
                     "font": "courier"
                 },
                 "subtitle": {
-                    "text": "this chart shows the education level in this area as % of overall population",
+                    "text": "This chart shows the education level in this area as % of overall population",
                     "color": "#999999",
                     "fontSize": 10,
                     "font": "courier"
