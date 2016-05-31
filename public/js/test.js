@@ -24,18 +24,49 @@ var yAxis = d3.svg.axis()
     .orient("left");*/
 i=0;
 function markerOnClickBarChart(e) {
-    i++;
-    var w = 400;
-    var h = 300;
-    var barPadding = 1;
-    var svg = null;
+
+
+
 
 
     $("svg").remove();
+    i++;
+    var w = 400;
+    var h = 300-70-20;
+    var barPadding = 1;
+    var svg = null;
+    var x = d3.scale.ordinal()
+        .rangeRoundBands([0, w], .05);
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+
     svg = d3.select("#sidebar")
             .append("svg")
             .attr("width", w)
-            .attr("height", h);
+            .attr("height", h+70+20)
+        .append("g")
+        .attr("transform",
+            "translate( 0, 20)");
+
+
+
+
+    var testArray = [{"v":"<$15K"}, {"v":"$15k-$35k"}, {"v":"$35k-$50k"}, {"v":"$50k-$75k"},
+        {"v":"$75k-$100k"}, {"v":"$100k-$150k"}, {"v":"$150k-$200k"}, {"v":">$200k"}];
+    x.domain(testArray.map(function(d) { return d.v; }));
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + h + ")")
+            .call(xAxis)
+         .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", "-.55em")
+            //.attr("font-size", "11px")
+            //.attr("fill", "red")
+            .attr("transform", "rotate(-90)" );
 
 
 
@@ -51,6 +82,10 @@ function markerOnClickBarChart(e) {
             var updateObject=$.grep(json, function (item) {
                 return item.Area == e;
             });
+
+
+
+
 
 
             var employmentData = updateObject[0];
@@ -71,19 +106,19 @@ function markerOnClickBarChart(e) {
                 .data(dataArray)
                 .enter()
                 .append("rect")
-                .attr("x", 0)
+               // .attr("x", 0)
                 .attr("y", function (d) {
-                    return h - Math.floor(d / n);  //Height minus data value
+                    return Math.floor(d / n);  //Height minus data value
                 })
                 .attr("width", 50)
                 .attr("height", function (d, i) {
-                    return Math.floor(d /n);
+                    return h-Math.floor(d /n);
                 })
                 .attr("fill", "black")
                 .attr("x", function (d, i) {
                     return i * 51;  //Bar width of 20 plus 1 for padding
                 });
-            svg.selectAll("text")
+            svg.selectAll("newtext")
                 .data(dataArray)
                 .enter()
                 .append("text")
@@ -94,7 +129,7 @@ function markerOnClickBarChart(e) {
                     return i * 51 + 10;  //Bar width of 20 plus 1 for padding
                 })
                 .attr("y", function (d) {
-                    return h - (Math.floor(d / n) ) + 10;
+                    return Math.floor(d / n) + 10;
                 })
                 .attr("font-family", "sans-serif")
                 .attr("font-size", "11px")
