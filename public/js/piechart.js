@@ -24,8 +24,8 @@ function markerOnClickPieChart(e) {
             },
             "size": {
                 "canvasWidth": 590,
-                "pieInnerRadius": "40%",
-                "pieOuterRadius": "55%"
+                "pieInnerRadius": "30%",
+                "pieOuterRadius": "45%"
             },
             "data": {
                 "sortOrder": "label-desc",
@@ -63,7 +63,7 @@ function markerOnClickPieChart(e) {
                     {
                         "label": "Master's degree",
                         "value": first["Master's degree (age>=25)"],
-                        "color": "#999999"
+                        "color": "#555555"
                     },
                     {
                         "label": "Grade 5 to grade 8",
