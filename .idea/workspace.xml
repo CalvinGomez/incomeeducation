@@ -27,7 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dade2d0a-a17b-4f09-8d54-9716d98965df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/piechart.js" afterPath="$PROJECT_DIR$/public/js/piechart.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/test.js" afterPath="$PROJECT_DIR$/public/js/test.js" />
     </list>
     <ignored path="incomeeducation.iws" />
@@ -52,8 +51,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6957708">
-              <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.16371077">
+              <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -104,9 +103,11 @@
       <file leaf-file-name="maptest.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/maptest.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="-3.125">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+              <folding>
+                <marker date="1464840284000" expanded="true" signature="88:119" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,10 +146,8 @@
         <entry file="file://$PROJECT_DIR$/views/maptest.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-22.5">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,7 +194,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="304" />
+    <option name="x" value="125" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="830" />
@@ -444,7 +443,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="304" y="22" width="1440" height="830" extended-state="0" />
+    <frame x="125" y="22" width="1440" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -773,9 +772,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/maptest.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <marker date="1464840284000" expanded="true" signature="88:119" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -806,10 +807,8 @@
     <entry file="file://$PROJECT_DIR$/views/maptest.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.5">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -825,8 +824,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6957708">
-          <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.16371077">
+          <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
           <folding />
         </state>
       </provider>
