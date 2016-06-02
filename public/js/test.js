@@ -140,11 +140,11 @@ function markerOnClickBarChart(e) {
                 .append("rect")
                // .attr("x", 0)
                 .attr("y", function (d) {
-                    return Math.floor(d / n);  //Height minus data value
+                    return h-Math.floor(d / n);  //Height minus data value
                 })
                 .attr("width", 50)
                 .attr("height", function (d, i) {
-                    return h-Math.floor(d /n);
+                    return Math.floor(d /n);
                 })
                 .attr("fill", "black")
                 .attr("x", function (d, i) {
@@ -161,7 +161,7 @@ function markerOnClickBarChart(e) {
                     return i * 51 + 10;  //Bar width of 20 plus 1 for padding
                 })
                 .attr("y", function (d) {
-                    return Math.floor(d / n) + 10;
+                    return h-Math.floor(d / n) + 10;
                 })
                 .attr("font-family", "sans-serif")
                 .attr("font-size", "11px")
