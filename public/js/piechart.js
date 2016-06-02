@@ -24,8 +24,8 @@ function markerOnClickPieChart(e) {
             },
             "size": {
                 "canvasWidth": 590,
-                "pieInnerRadius": "40%",
-                "pieOuterRadius": "55%"
+                "pieInnerRadius": "30%",
+                "pieOuterRadius": "45%"
             },
             "data": {
                 "sortOrder": "label-desc",
