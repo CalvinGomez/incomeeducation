@@ -33,57 +33,57 @@ function markerOnClickPieChart(e) {
                     {
                         "label": "Less than 9th grade",
                         "value": first["Less than 9th grade (age>=25)"],
-                        "color": "#333333"
+                        "color": "#fefeef"
                     },
                     {
                         "label": "9th through 12th grade, no diploma",
                         "value": first["9th through 12th grade, no diploma (age>=25)"],
-                        "color": "#444444"
+                        "color": "#ffc1e1"
                     },
                     {
                         "label": "High school graduate",
                         "value": first["High school graduate (include equivalency (age>=25))"],
-                        "color": "#666666"
+                        "color": "#e0ffc1"
                     },
                     {
                         "label": "Some college, no diploma",
                         "value": first["Some college, no diploma (age>=25)"],
-                        "color": "#777777"
+                        "color": "#c1e2ff"
                     },
                     {
                         "label": "Associate's degree",
                         "value": first["Associate's degree (age>=25)"],
-                        "color": "#888888"
+                        "color": "#d3bdff"
                     },
                     {
                         "label": "Bachelor's degree",
                         "value": first["Bachelor's degree (age>=25)"],
-                        "color": "#999999"
+                        "color": "#fafe20"
                     },
                     {
                         "label": "Master's degree",
                         "value": first["Master's degree (age>=25)"],
-                        "color": "#555555"
+                        "color": "#12feff"
                     },
                     {
                         "label": "Grade 5 to grade 8",
                         "value": first["Grade 5 to grade 8 -total enrollment (age>=3)"],
-                        "color": "#666666"
+                        "color": "#ffcdff"
                     },
                     {
                         "label": "Grade 9 to grade 12",
                         "value": first["Grade 9 to grade 12 -total enrollment (age>=3)"],
-                        "color": "#999999"
+                        "color": "#dcbceb"
                     },
                     {
                         "label": "College undergraduate ",
                         "value": first["College undergraduate -total enrollment (age>=3)"],
-                        "color": "#494949"
+                        "color": "#d8ff00"
                     },
                     {
                         "label": "Graduate or professional school",
                         "value": first["Graduate or professional school -total enrollment (age>=3)"],
-                        "color": "#111111"
+                        "color": "#888888"
                     }
                 ]
             },
