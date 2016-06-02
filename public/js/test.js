@@ -129,11 +129,35 @@ function markerOnClickBarChart(e) {
             var from100to150 = employmentData["Households with income $100k-$150k"];
             var from150to200 = employmentData["Households with income $150k-$200k"];
             var more200 = employmentData["Households with income >$200k"];
+            var originalArray = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
             dataArray = [less15, from15to35, from35to50, from50to75, from75to100, from100to150, from150to200, more200];
             // console.log(dataArray);
             incomeArray = ["<$15K", "$15k-$35k", "$35k-$50k", "$50k-$75k", "$75k-$100k", "$100k-$150k", "$150k-$200k", ">$200k"];
 
-            var n=45;
+            var maxVal=Math.max(less15, from15to35, from35to50, from50to75, from100to150, from75to100, from150to200, more200);
+            console.log(maxVal);
+
+            console.log(dataArray);
+
+
+
+            var m= (h)/maxVal;
+
+
+
+            for (i = 0; i < dataArray.length; i++) {
+                dataArray[i]=Math.floor(m*dataArray[i]);
+            }
+
+
+
+            var c = dataArray.map(function (e, i) {
+                return [dataArray[i], originalArray[i]];
+            });
+
+            var n=1;
+            console.log(dataArray);
+
             svg.selectAll("rect")
                 .data(dataArray)
                 .enter()
@@ -151,17 +175,17 @@ function markerOnClickBarChart(e) {
                     return i * 51;  //Bar width of 20 plus 1 for padding
                 });
             svg.selectAll("newtext")
-                .data(dataArray)
+                .data(c)
                 .enter()
                 .append("text")
                 .text(function (d) {
-                    return d;
+                    return d[1];
                 })
                 .attr("x", function (d, i) {
                     return i * 51 + 10;  //Bar width of 20 plus 1 for padding
                 })
                 .attr("y", function (d) {
-                    return h-Math.floor(d / n) + 10;
+                    return h-Math.floor(d[0] / n) + 10;
                 })
                 .attr("font-family", "sans-serif")
                 .attr("font-size", "11px")
